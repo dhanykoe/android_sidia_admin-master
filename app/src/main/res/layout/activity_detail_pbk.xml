@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteBlue">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteBlue">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/app_name">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/logo" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:text="Detail Form Permintaan"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:fontFamily="@font/nunito_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardMaxElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Kendaraan"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/nunito_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/kendaraan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Kendaraan :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/jenis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="-"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Tanggal KM Lalu :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/jenis" />
+
+                <TextView
+                    android:id="@+id/tglSekarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/textView14"
+                    app:layout_constraintTop_toBottomOf="@+id/kmLalu" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="KM Lalu :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tglLalu" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Tanggal KM Sekarang :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/kmLalu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/tglLalu" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="KM Sekarang :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                <TextView
+                    android:id="@+id/kmSekarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/textView15"
+                    app:layout_constraintTop_toBottomOf="@+id/tglSekarang" />
+
+                <TextView
+                    android:id="@+id/tglLalu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/jenis" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+
+            app:cardMaxElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/kendaraan2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Bahan Bakar :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <TextView
+                    android:id="@+id/kendaraan3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Pelumas :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan2" />
+
+                <TextView
+                    android:id="@+id/kendaraan12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Ban :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan3" />
+
+                <TextView
+                    android:id="@+id/kendaraan4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Spare Part / Perkakas :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan12" />
+
+                <TextView
+                    android:id="@+id/kendaraan5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Servis Berkala :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan4" />
+
+                <TextView
+                    android:id="@+id/kendaraan6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Servis Ringan :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan5" />
+
+                <TextView
+                    android:id="@+id/kendaraan7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Servis Berat :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan6" />
+
+                <TextView
+                    android:id="@+id/kendaraan8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Uji Berkala :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan7" />
+
+                <TextView
+                    android:id="@+id/kendaraan9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="STNK :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan8" />
+
+                <TextView
+                    android:id="@+id/kendaraan10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Lain-lain :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan9" />
+
+                <TextView
+                    android:id="@+id/kendaraan11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Keterangan :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan10" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Harga"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/nunito_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/bahanBakar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <TextView
+                    android:id="@+id/perkakas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan4"
+                    app:layout_constraintTop_toBottomOf="@+id/ban" />
+
+                <TextView
+                    android:id="@+id/ban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan12"
+                    app:layout_constraintTop_toBottomOf="@+id/pelumas" />
+
+                <TextView
+                    android:id="@+id/berkala"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan5"
+                    app:layout_constraintTop_toBottomOf="@+id/perkakas" />
+
+                <TextView
+                    android:id="@+id/ketlain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan11"
+                    app:layout_constraintTop_toBottomOf="@+id/lain" />
+
+                <TextView
+                    android:id="@+id/pelumas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan3"
+                    app:layout_constraintTop_toBottomOf="@+id/bahanBakar" />
+
+                <TextView
+                    android:id="@+id/ringan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan6"
+                    app:layout_constraintTop_toBottomOf="@+id/berkala" />
+
+                <TextView
+                    android:id="@+id/stnk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan9"
+                    app:layout_constraintTop_toBottomOf="@+id/uji" />
+
+                <TextView
+                    android:id="@+id/uji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan8"
+                    app:layout_constraintTop_toBottomOf="@+id/berat" />
+
+                <TextView
+                    android:id="@+id/lain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan10"
+                    app:layout_constraintTop_toBottomOf="@+id/stnk" />
+
+                <TextView
+                    android:id="@+id/berat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan7"
+                    app:layout_constraintTop_toBottomOf="@+id/ringan" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardMaxElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/kendaraan15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Alamat :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan13" />
+
+                <TextView
+                    android:id="@+id/kendaraan13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Dealer / Toko :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/kendaraan14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Alamat :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan13" />
+
+                <TextView
+                    android:id="@+id/kendaraan16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Telepon :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan15" />
+
+                <TextView
+                    android:id="@+id/kendaraan17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Bank :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan16" />
+
+                <TextView
+                    android:id="@+id/kendaraan18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Rekening :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan17" />
+
+                <TextView
+                    android:id="@+id/kendaraan19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Atas Nama :"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kendaraan18" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Dealer"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/nunito_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dealer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan13"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan15"
+                    app:layout_constraintTop_toBottomOf="@+id/dealer" />
+
+                <TextView
+                    android:id="@+id/telepon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan16"
+                    app:layout_constraintTop_toBottomOf="@+id/alamat" />
+
+                <TextView
+                    android:id="@+id/bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan17"
+                    app:layout_constraintTop_toBottomOf="@+id/telepon" />
+
+                <TextView
+                    android:id="@+id/rekening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan18"
+                    app:layout_constraintTop_toBottomOf="@+id/bank" />
+
+                <TextView
+                    android:id="@+id/an"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:inputType="textPersonName"
+                    android:text="-"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintStart_toEndOf="@+id/kendaraan19"
+                    app:layout_constraintTop_toBottomOf="@+id/rekening" />
+
+                <Button
+                    android:id="@+id/proses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Proses"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/an" />
+
+                <Button
+                    android:id="@+id/approve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Approve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/an" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
